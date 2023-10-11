@@ -1,0 +1,31 @@
+{
+  "CreateMediaLibraryPageLocators": {
+    "media_libraryTab": "[data-document-id='11350'] > .m-navdocuments__item-link > .m-navdocuments__item-link-text",
+    "Search_box": ".o-library__query",
+    "Search_BTN": "Search",
+    "ListOfAssets": ".o-library__asset-list.js-o-library__asset-list>div.o-library__asset-item.js-o-library__asset-item",
+    "Select_Image": ".o-library__asset-list>div>img",
+    "SearchResultText": "h2.a-h2.o-library__assets-title.js-o-library__assets-title",
+    "Image_Title": ".tw-flex-col.tw-gap-2 > .tw-flex-col > .tw-break-words",
+    "Check_Format": ".tw-grid > :nth-child(1) > .tw-text-text",
+    "File_Size": ":nth-child(2) > .tw-text-text",
+    "Resolution": ":nth-child(3) > .tw-text-text",
+    "Sizes": ":nth-child(2) > .co-viewer__download-size-cell > .co-viewer__download-size-dimensions > .ca-radio",
+    "Select_Options": "div.tw-px-2 tr",
+    "Verify_Download": "[tabindex='0'] > .ca-metainfo__td > .cm-btn",
+    "Download_File": "[tabindex='0'] > .ca-metainfo__td > .cm-btn",
+    "Filter": ".o-library__facettes-selection",
+    "FilterOption1": "div[data-col='0'] > .js-cm-facettefilter__facette-list > .cm-facettefilter__facette > .cm-facettefilter__facette-title",
+    "FilterOption2": "div[data-col='1'] > .js-cm-facettefilter__facette-list > .cm-facettefilter__facette > .cm-facettefilter__facette-title",
+    "FileType_Filter": ".cm-facettefilter__facette-title:contains('Filetypes')",
+    "Images": "Images",
+    "Orientation": ".cm-facettefilter__facette-title:contains('Orientations')",
+    "Landscape": "Landscape",
+    "UsageType": ".cm-facettefilter__facette-title:contains('Usage type')",
+    "Digital": "Digital",
+    "AssetsCount": "h2.a-h2.o-library__assets-title.js-o-library__assets-title",
+    "ClearFilter": ".cm-facettefilter__clear-filters-button",
+    "backButton": ".co-viewer__close.js-co-viewer__close[title='Close']",
+    "NoMatchesFound": ".tw-font-heading > div"
+  }
+}

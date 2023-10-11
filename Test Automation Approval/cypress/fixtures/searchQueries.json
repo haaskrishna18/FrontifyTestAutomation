@@ -1,0 +1,18 @@
+{
+  "queries": [
+    "coconut",
+    "xyyz12345",
+    "palm",
+    "apple"
+  ],
+  "positiveSearchQueries": [
+    "coconut",
+    "apple",
+    "very long tag name, the one i want to delete",
+    "palm"
+  ],
+  "negativeSearchQueries": [
+    "greenapple",
+    "xyyz12345"
+  ]
+}
