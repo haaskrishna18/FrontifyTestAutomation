@@ -1,9 +1,10 @@
 {
   "CreateMediaLibraryPageLocators": {
+
     "media_libraryTab": "[data-document-id='11350'] > .m-navdocuments__item-link > .m-navdocuments__item-link-text",
     "Search_box": ".o-library__query",
     "Search_BTN": "Search",
-    "ListOfAssets": ".o-library__asset-list.js-o-library__asset-list>div.o-library__asset-item.js-o-library__asset-item",
+    "ListOfAssets": ".o-library__asset-list.js-o-library__asset-list",
     "Select_Image": ".o-library__asset-list>div>img",
     "SearchResultText": "h2.a-h2.o-library__assets-title.js-o-library__assets-title",
     "Image_Title": ".tw-flex-col.tw-gap-2 > .tw-flex-col > .tw-break-words",
@@ -15,10 +16,11 @@
     "Verify_Download": "[tabindex='0'] > .ca-metainfo__td > .cm-btn",
     "Download_File": "[tabindex='0'] > .ca-metainfo__td > .cm-btn",
     "Filter": ".o-library__facettes-selection",
-    "FilterOption1": "div[data-col='0'] > .js-cm-facettefilter__facette-list > .cm-facettefilter__facette > .cm-facettefilter__facette-title",
-    "FilterOption2": "div[data-col='1'] > .js-cm-facettefilter__facette-list > .cm-facettefilter__facette > .cm-facettefilter__facette-title",
+    "FilterOption1": "div[data-col='0']",
+    "FilterOption2": "div[data-col='0']",
     "FileType_Filter": ".cm-facettefilter__facette-title:contains('Filetypes')",
     "Images": "Images",
+    "Movies": "Movies",
     "Orientation": ".cm-facettefilter__facette-title:contains('Orientations')",
     "Landscape": "Landscape",
     "UsageType": ".cm-facettefilter__facette-title:contains('Usage type')",
