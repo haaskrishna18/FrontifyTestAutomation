@@ -111,12 +111,12 @@ export class MediaLibraryElements {
     ).should("have.text", "Filetypes");
   }
   Option1Click() {
-   cy.get(
-     MediaLibraryPageLocators.CreateMediaLibraryPageLocators.FilterOption1
-   )
-     .contains("Images")
-     .click();
- }
+    cy.get(
+      MediaLibraryPageLocators.CreateMediaLibraryPageLocators.FilterOption1
+    )
+      .contains("Images")
+      .click();
+  }
 
   Option2Click() {
     cy.get(
@@ -243,38 +243,45 @@ export class MediaLibraryElements {
     ).click();
   }
 
-  /*CountMediaElements() {
-      // Count the number of image and video elements on the page
-      cy.get(MediaLibraryPageLocators.CreateMediaLibraryPageLocators.ListOfAssets)
-         .should('have.length.gt', 0)
-         // Ensure there are image and video elements on the page
-         .then((mediaElements) => {
-            const totalMediaCount = mediaElements.length;
-            return totalMediaCount;
-         })
-
-   }*/
+  CountMediaElements() {
+    // Count the number of image and video elements on the page
+    cy.scrollTo("bottom", { ensureScrollable: false }).then(() => {
+      return cy.wait(4500);
+    });
+    return (
+      cy
+        .get(
+          MediaLibraryPageLocators.CreateMediaLibraryPageLocators.ListOfAssets
+        ).children()
+        .should("have.length.gt", 0)
+        // Ensure there are image and video elements on the page
+        .then((mediaElements) => {
+          console.log(`the length of total elements are ${mediaElements.length}`)
+          return mediaElements.length;
+        })
+    );
+  }
 
   CountVideoElements() {
     // Count the number of image and video elements on the page
-    
+
     return cy
       .get(MediaLibraryPageLocators.CreateMediaLibraryPageLocators.ListOfAssets)
       .find("div > .icon-play.o-library__video-icon")
       .then(($videoElements) => {
         return $videoElements.length;
       });
-  } 
+  }
   CountImageElements() {
-   // Count the number of image and video elements on the page
-   cy.wait(2500)
-   return cy
-     .get(MediaLibraryPageLocators.CreateMediaLibraryPageLocators.ListOfAssets)
-     .find("img[alt]")
-     .then(($imgElements) => {
-       return $imgElements.length;
-     });
- }
+    // Count the number of image and video elements on the page
+    cy.wait(2500);
+    return cy
+      .get(MediaLibraryPageLocators.CreateMediaLibraryPageLocators.ListOfAssets)
+      .find("img[alt]")
+      .then(($imgElements) => {
+        return $imgElements.length;
+      });
+  }
 
   DisplayedCount() {
     // Extract the count from the displayed search result text
@@ -286,11 +293,13 @@ export class MediaLibraryElements {
       .get(MediaLibraryPageLocators.CreateMediaLibraryPageLocators.AssetsCount)
       .invoke("text")
       .then((text) => {
+        //cy.log(text)
         const match = text.match(/\d+/); // Extract numbers from the text
-        const displayedCount = match ? parseInt(match[0]) : null;
-        // Verify that the displayed count matches the actual count of media assets
-        return displayedCount;
-      });
+        const displayedCount = match ? parseInt(match[0]) : null; 
+        console.log(displayedCount)
+        return displayedCount
+        //cy.wrap(displayedCount).then(() => {return displayedCount})
+      })
   }
 
   NoMatchesFound(query) {
