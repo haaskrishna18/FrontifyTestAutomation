@@ -69,7 +69,7 @@ describe("Media Library Search", () => {
     });
   });
 
-  it.only("Should display no search results", () => {
+  it("Should display no search results", () => {
     cy.visit(testSiteUrls.baseUrl + testSiteUrls.MediaLibrary);
 
     MediaLibrary_Elements.MediaLibraryTAb();
