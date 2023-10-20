@@ -38,6 +38,21 @@ describe("Filter Test Cases", () => {
       MediaLibrary_Elements.Filter();
     });
   });
+  it("should open the filter options when the filter button is clicked", () => {
+    cy.get("@searchQueries").then((queries) => {
+      const query = queries[randomQueryIndex];
+      MediaLibrary_Elements.SearchBOx();
+      MediaLibrary_Elements.SearchBTN();
+      MediaLibrary_Elements.SearchQuery(query);
+      MediaLibrary_Elements.SearchBTN();
+
+      // Click the filter button to open the filter options
+      MediaLibrary_Elements.FilterOpen();
+      // Ensure that the filter options are displayed
+      MediaLibrary_Elements.Option1();
+      MediaLibrary_Elements.Option2();
+    });
+  });
 
   it("Should count number of videos in filter and compares visible count text", () => {
     MediaLibrary_Elements.SearchBOx();
@@ -69,21 +84,7 @@ describe("Filter Test Cases", () => {
     });
   });
 
-  it("should open the filter options when the filter button is clicked", () => {
-    cy.get("@searchQueries").then((queries) => {
-      const query = queries[randomQueryIndex];
-      MediaLibrary_Elements.SearchBOx();
-      MediaLibrary_Elements.SearchBTN();
-      MediaLibrary_Elements.SearchQuery(query);
-      MediaLibrary_Elements.SearchBTN();
-
-      // Click the filter button to open the filter options
-      MediaLibrary_Elements.FilterOpen();
-      // Ensure that the filter options are displayed
-      MediaLibrary_Elements.Option1();
-      MediaLibrary_Elements.Option2();
-    });
-  });
+ 
   it("should filter by Filetypes", () => {
     MediaLibrary_Elements.FilterOpen();
 
